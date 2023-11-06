@@ -1,0 +1,99 @@
+.page-gallery{
+  width: 100%;
+  height: 100vh;
+  background-color: rgb(178, 47, 55);
+  box-sizing: border-box;
+  padding: 200rpx 0rpx 0rpx;
+  position: relative;
+}
+.page-gallery .bg{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+ .img{
+  width: 100%;
+}
+
+
+.itemImg{
+  position: absolute;
+  width: 100%;
+  height: 380rpx;
+  border-radius: 15rpx;
+  z-index: 5;
+  opacity: 0.7;
+  top: 13%;
+ }
+ .active{
+  opacity: 1;
+  z-index: 10;
+  height: 430rpx;
+  top: 7%;
+  transition:all .2s ease-in 0s;
+ }
+ 
+
+
+
+
+
+
+
+
+
+/* .swiper{
+  width: 100%;
+  height: calc(100vw*442/1000);
+} */
+/* image{
+  width: 100%;
+} */
+
+/*  我所引入的原图大小是：810*442 
+    而swiper默认的宽度高度是:width:100%  height:150px
+
+    公式：（等比例）
+    原图width / height = swiper width / height
+    所以得出计算swiper高度的公式
+    swiper的高度=100% * 原图height / 原图width  
+    
+    
+     我所引入的原图大小是：810*442 
+    而swiper默认的宽度高度是:width:100%  height:150px
+
+    公式：（等比例）
+    原图width / height = swiper width / height
+    所以得出计算swiper高度的公式
+    swiper的高度=100% * 原图height / 原图width  */
+
+
+
+
+
+
+
+
+
+
+
+
+/* .swiper {
+  width: 100%;
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
+
+.swiper-slide {
+  background-position: center;
+  background-size: cover;
+  width: 300px;
+  height: 300px;
+}
+
+.swiper-slide img {
+  display: block;
+  width: 100%;
+} */

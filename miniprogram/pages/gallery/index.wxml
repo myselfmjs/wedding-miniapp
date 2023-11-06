@@ -1,0 +1,68 @@
+<wxs src="../../tools.wxs" module="tools" />
+
+<!-- <view class="page-gallery">
+
+
+  <image class="bg" src="{{tools.img(bg)}}" lazy-load mode="aspectFill"></image>
+  <view class="group-list">
+    <view class="group" wx:for="{{images}}" wx:key="index" data-index="{{index}}" bindtap="handleClickGroup">
+      <image class="bg" src="{{tools.img(item.path, item.bg)}}" mode="aspectFill"></image>
+      <view class="title">{{item.name}}</view>
+    </view>
+  </view>
+
+  <view class="group-gallery" hidden="{{!showGallery}}">
+    <view class="close">
+      <image src="/images/icons/close.png" catchtap="handleCloseGroup"></image>
+    </view>
+    <view class="list">
+      <image wx:for="{{group.children}}" wx:key="index" class="img" src="{{tools.img(group.path, item)}}" mode="widthFix" lazy-load data-index="{{index}}" bindtap="handlePreview"></image>
+    </view>
+  </view>
+
+   <player></player>
+</view>   -->
+
+
+<view class="page-gallery">
+  <image class="bg" src="/images/pink_bg.png" mode="scaleToFit"></image>
+
+  <view wx:for="{{images}}" wx:for-item="item" wx:key="index">
+    <view class="title">{{item.name}}</view>
+        <swiper 
+        autoplay="{ reverseDirection: true}" 
+        circular="{{true}}" 
+        indicator-dots="{{false}}" 
+        easing-function="easeInOutCubic"
+        previous-margin="100rpx" 
+        next-margin="100rpx"
+        duration="2000"
+        interval="{{(index+1)*2000}}"
+        display-multiple-items:3
+        class="swiper"  >
+          <view  wx:for="{{item.children}}" wx:for-item="pic"  wx:key="*this">
+            <swiper-item >
+            <image mode="widthFix" class="img itemImg {{currentIndex == index ? 'active': ''}}" src="{{tools.img(item.path, pic)}}"></image>
+            </swiper-item>
+          </view>
+        </swiper>
+     
+  </view>
+  
+
+
+
+
+
+
+  <!-- <view  style="margin-top: 50px;">
+        <scroll-view type="list" class="scroll-view_H" scroll-x="true" bindscroll="scroll" style="width: 100%; height: 408rpx;" >
+          <image  class="img" src="cloud://cloud1-9ga2qic133148ce1.636c-cloud1-9ga2qic133148ce1-1321925380/chinese/1.jpg"   ></image>
+          <image  class="img" src="cloud://cloud1-9ga2qic133148ce1.636c-cloud1-9ga2qic133148ce1-1321925380/chinese/2.jpg" ></image>
+          <image  class="img" src="cloud://cloud1-9ga2qic133148ce1.636c-cloud1-9ga2qic133148ce1-1321925380/chinese/3.jpg" ></image>
+        </scroll-view>
+  </view> -->
+
+
+  
+</view>

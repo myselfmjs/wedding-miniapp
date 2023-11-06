@@ -1,0 +1,54 @@
+<wxs src="../../tools.wxs" module="tools" />
+
+<view class="message-page">
+  <image class="bg" src="/images/pink_bg.png" mode="scaleToFit"></image>
+
+  <!-- <view class="message-list">
+    <view class="message-item" wx:for="{{tweenList}}" wx:key="index" style="background-color: {{item.color}}">
+      <view class="text">{{ item.text}}</view>
+      <view class="name">{{ item.nickname}}</view>
+      <view class="time">{{item.time}}</view>
+    </view>
+  </view> -->
+
+  <scroll-view scroll-y style="width: 750rpx; height: 1100rpx; display: block; box-sizing: border-box"
+  refresher-enabled="{{false}}"
+  refresher-threshold="{{80}}"
+  refresher-default-style="none"
+  refresher-background="lightgreen"
+>
+  <!-- <view slot="refresher" class="refresh-container"
+    style="display: block; width: 100%; height: 20px; background: rgb(0, 255, 179); display: flex; align-items: center;"
+  >
+    <view class="view1" style="position: absolute; text-align: center; width: 100%;">
+      下拉刷新 
+    </view>
+  </view> -->
+  <view class="message-item" wx:for="{{tweenList}}" wx:key="index"  style="background-color: rgb(165, 225, 243)">  <!--background-color: {{item.color} -->
+      <view class="text" >{{ item.text}}</view>
+      <view class="name" >{{ item.nickname}}</view>
+      <view class="time">{{item.time}}</view>
+    </view>
+  </scroll-view>
+
+  <view id="bottom"></view>
+
+  <view class="btn-add-message" bindtap="handleBtnAddMessage">
+    <image src="/images/icons/wish.png" mode="widthFix"></image>
+  </view>
+
+  <view class="add-message-modal {{isMessageModalShow ? 'modal_show' : 'modal_hide'}}">
+    <image class="close" bindtap="handleHideMessageModal" src="/images/icons/close.png" mode="widthFix"></image>
+    <image lazy-load class="bg" src="../../images/card.png" mode="scaleToFill"></image>
+
+    <view class="modal-content">
+      <form>
+        <textarea class="input" type="text" maxlength="{{50}}" placeholder="对新人的祝福" value="" bindinput="oninput"/>
+        <input type="nickname" name="nickname"  class="name" placeholder="姓名" bindchange="oninputname" />
+        <button form-type="reset" class="btn" loading="{{loading}}" disabled="{{loading}}" bindtap="handleBtnSaveMessage">发送祝福</button>
+      </form>
+    </view>
+  </view>
+  
+ <player></player>
+</view>

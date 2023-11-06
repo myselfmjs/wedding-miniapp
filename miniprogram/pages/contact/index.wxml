@@ -1,0 +1,18 @@
+<view class="page-contact">
+  <image lazy-load class="bg" src="../../images/red_bg.png" mode="widthFix"></image>
+
+  <view class="content">
+    <map class="map" latitude="{{address.point[0]}}" longitude="{{address.point[1]}}" enable-3D="true" enable-building="true" markers="{{[address.marker]}}" show-location="true" data-address="{{address}}" bindmarkertap="handleGoMap" ></map>
+  
+    <view class="info" >
+      <view>2023年11月28日</view>
+      <view>农历：十月十六（星期二）</view>
+      <view>淮河饭店(淮滨党校店) </view>
+      <view class="btn-go" data-target="husband" bindtap="handleGoMap">去参加</view>
+    </view>
+  
+    <player></player>
+  
+    
+    </view>
+</view>
